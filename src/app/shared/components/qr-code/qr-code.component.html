@@ -1,0 +1,25 @@
+<ion-content>
+    <ion-card style="margin: 0; box-shadow: none;">
+
+        <ion-toolbar>
+            <ion-buttons slot="start">
+                <ion-button (click)="back()">
+                    <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+            <ion-title class="fw-bold">
+                Qr Code
+            </ion-title>
+        </ion-toolbar>
+
+        <!-- bg -->
+
+        <ion-card-content>
+            <ion-item>
+                <i style="color: red;">*Scan QR code to copy this contact</i>
+            </ion-item>
+            <ngx-qrcode cssClass="qrFullScreen" [value]="valueQr" errorCorrectionLevel="L">
+            </ngx-qrcode>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

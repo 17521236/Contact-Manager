@@ -1,0 +1,29 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar style="padding: 1rem 0;">
+        <ion-buttons slot="start">
+            <ion-button (click)="back()">
+                <ion-icon slot="icon-only" name="arrow-back-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-input [(ngModel)]="searchText" (change)="search()" class="search-input" placeholder="Search by name...">
+        </ion-input>
+        <ion-buttons slot="end">
+            <ion-button (click)="search">
+                <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none">
+        <!-- loop item -->
+        <div *ngFor="let contact of searchService.data">
+            <app-contact-item [title]="contact.name" [avatar]="contact.avatar" [description]="contact.organization" isShowStar="false" (click)="showDetail(contact)"></app-contact-item>
+        </div>
+        <!-- item -->
+        <div class="ion-text-center" *ngIf="!searchService.data[0]">
+            No result found
+        </div>
+    </ion-list>
+</ion-content>

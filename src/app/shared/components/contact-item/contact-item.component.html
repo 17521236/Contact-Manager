@@ -1,0 +1,15 @@
+<ion-item>
+    <ion-buttons *ngIf="isShowStar" class="ion-no-margin" slot="start">
+        <ion-button>
+            <ion-icon name="star" [color]="isFavorite ? 'primary' : 'light'" style="font-size: 1rem;">
+            </ion-icon>
+        </ion-button>
+    </ion-buttons>
+    <ion-avatar slot="start">
+        <img [src]="avatar.webviewPath">
+    </ion-avatar>
+    <ion-label>
+        <h2 class="fw-bold">{{title}}</h2>
+        <p>{{description}}</p>
+    </ion-label>
+</ion-item>

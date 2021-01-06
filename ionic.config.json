@@ -1,0 +1,8 @@
+{
+  "name": "contact manager",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

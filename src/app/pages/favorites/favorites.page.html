@@ -1,0 +1,31 @@
+<ion-header class="ion-no-border" style="border-bottom: 1px rgba(0, 0, 0, 0.3) solid;">
+    <ion-toolbar>
+        <ion-title slot="start" class="fw-bold">Favorites</ion-title>
+        <ion-buttons slot="end">
+            <ion-button (click)="showSearchModal()">
+                <ion-icon slot="icon-only" name="search"></ion-icon>
+            </ion-button>
+            <ion-button (click)="showAddContact()">
+                <ion-icon slot="icon-only" name="add"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="none">
+        <!-- loop alpha -->
+        <div *ngFor="let alpha of contactService.arrAlphaFavorites">
+            <ion-list-header>
+                <span class="fw-bold" style="padding-left: 0.76rem;">{{alpha}}</span>
+            </ion-list-header>
+            <!-- loop item -->
+            <div *ngFor="let contact of contactService.contactsFavorites">
+                <app-contact-item *ngIf="contact.name[0] === alpha" [title]="contact.name" [avatar]="contact.avatar" [description]="contact.organization" [isFavorite]="contact.isFavorite" (click)="showDetail(contact)"></app-contact-item>
+            </div>
+            <!-- item -->
+        </div>
+        <!-- loop alpha -->
+    </ion-list>
+
+</ion-content>
