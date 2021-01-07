@@ -7,14 +7,15 @@ Contact Manager app using Ionic, Angular
 
 Use the package manager [npm](https://www.npmjs.com/) to install and run.
 
-on desktop:
+Desktop:
 ```bash
-npm install
+npm i
 npm start
 ```
 
-on Android or IOS
+Android or IOS:
 ```bash
+npm i
 ionic cap add ios
 ionic cap add android
 ionic cap sync 
